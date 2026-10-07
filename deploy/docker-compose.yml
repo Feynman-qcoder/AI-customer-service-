@@ -1,0 +1,195 @@
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD:-change_me_local_mysql_password}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-smart_customer_service}
+    ports:
+      - "${BIND_HOST:-127.0.0.1}:${MYSQL_HOST_PORT:-3307}:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$${MYSQL_ROOT_PASSWORD} --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  qdrant:
+    image: qdrant/qdrant:v1.12.5
+    ports:
+      - "${BIND_HOST:-127.0.0.1}:${QDRANT_HTTP_HOST_PORT:-6333}:6333"
+      - "${BIND_HOST:-127.0.0.1}:${QDRANT_GRPC_HOST_PORT:-6334}:6334"
+    volumes:
+      - qdrant-data:/qdrant/storage
+
+  redis:
+    image: redis:7.4-alpine
+    ports:
+      - "${BIND_HOST:-127.0.0.1}:${REDIS_HOST_PORT:-6379}:6379"
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  migrate:
+    build:
+      context: ..
+      dockerfile: deploy/server.Dockerfile
+    command: ["python", "-m", "alembic", "upgrade", "head"]
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-smart_customer_service}
+      MYSQL_USERNAME: ${MYSQL_USERNAME:-root}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-change_me_local_mysql_password}
+    depends_on:
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      disable: true
+
+  bootstrap:
+    build:
+      context: ..
+      dockerfile: deploy/server.Dockerfile
+    command: ["python", "scripts/bootstrap_local.py", "--skip-migrate"]
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-smart_customer_service}
+      MYSQL_USERNAME: ${MYSQL_USERNAME:-root}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-change_me_local_mysql_password}
+      QDRANT_HOST: qdrant
+      QDRANT_PORT: 6333
+      DOCUMENT_STORAGE_PATH: /app/data/documents
+      EMBEDDING_MOCK_ENABLED: ${EMBEDDING_MOCK_ENABLED:-true}
+      EMBEDDING_API_KEY: ${EMBEDDING_API_KEY:-}
+      EMBEDDING_BASE_URL: ${EMBEDDING_BASE_URL:-http://127.0.0.1:9}
+      EMBEDDING_MODEL_NAME: ${EMBEDDING_MODEL_NAME:-text-embedding-3-small}
+      EMBEDDING_DIMENSION: ${EMBEDDING_DIMENSION:-384}
+    volumes:
+      - document-data:/app/data/documents
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      qdrant:
+        condition: service_started
+      redis:
+        condition: service_healthy
+    healthcheck:
+      disable: true
+
+  server:
+    build:
+      context: ..
+      dockerfile: deploy/server.Dockerfile
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-smart_customer_service}
+      MYSQL_USERNAME: ${MYSQL_USERNAME:-root}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-change_me_local_mysql_password}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-}
+      JWT_SECRET: ${JWT_SECRET:-replace_with_a_random_secret_of_at_least_32_characters}
+      ACCESS_TOKEN_TTL_MINUTES: ${ACCESS_TOKEN_TTL_MINUTES:-30}
+      REFRESH_TOKEN_TTL_DAYS: ${REFRESH_TOKEN_TTL_DAYS:-7}
+      DEMO_ADMIN_USERNAME: ${DEMO_ADMIN_USERNAME:-admin}
+      DEMO_ADMIN_PASSWORD: ${DEMO_ADMIN_PASSWORD:-local_admin_demo_only}
+      DEMO_CUSTOMER_USERNAME: ${DEMO_CUSTOMER_USERNAME:-user}
+      DEMO_CUSTOMER_PASSWORD: ${DEMO_CUSTOMER_PASSWORD:-local_customer_demo_only}
+      QDRANT_HOST: qdrant
+      QDRANT_PORT: 6333
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      LLM_BASE_URL: ${LLM_BASE_URL:-http://127.0.0.1:9}
+      LLM_MODEL_NAME: ${LLM_MODEL_NAME:-deepseek-v4-flash}
+      LLM_TEMPERATURE: ${LLM_TEMPERATURE:-0.2}
+      LLM_MOCK_ENABLED: ${LLM_MOCK_ENABLED:-true}
+      LLM_REQUEST_TIMEOUT_SECONDS: ${LLM_REQUEST_TIMEOUT_SECONDS:-12}
+      LLM_MAX_COMPLETION_TOKENS: ${LLM_MAX_COMPLETION_TOKENS:-512}
+      RAG_TOP_K: ${RAG_TOP_K:-5}
+      RAG_MIN_RETRIEVAL_SCORE: ${RAG_MIN_RETRIEVAL_SCORE:-0.35}
+      DOCUMENT_STORAGE_PATH: /app/data/documents
+      EMBEDDING_MOCK_ENABLED: ${EMBEDDING_MOCK_ENABLED:-true}
+      EMBEDDING_API_KEY: ${EMBEDDING_API_KEY:-}
+      EMBEDDING_BASE_URL: ${EMBEDDING_BASE_URL:-http://127.0.0.1:9}
+      EMBEDDING_MODEL_NAME: ${EMBEDDING_MODEL_NAME:-text-embedding-3-small}
+      EMBEDDING_DIMENSION: ${EMBEDDING_DIMENSION:-384}
+      CHECKPOINT_BACKEND: sqlite
+      CHECKPOINT_DB_PATH: /app/data/checkpoints/agent.sqlite
+      CHECKPOINT_REQUIRED: "true"
+      CHECKPOINT_WORKER_COUNT: "1"
+      CHECKPOINT_RETENTION_DAYS: ${CHECKPOINT_RETENTION_DAYS:-30}
+      CHECKPOINT_LEASE_TTL_SECONDS: ${CHECKPOINT_LEASE_TTL_SECONDS:-60}
+      CHECKPOINT_LEASE_RENEW_INTERVAL_SECONDS: ${CHECKPOINT_LEASE_RENEW_INTERVAL_SECONDS:-15}
+      DURABLE_CUSTOMER_INTERRUPT_ENABLED: "true"
+    ports:
+      - "${BIND_HOST:-127.0.0.1}:${SERVER_HOST_PORT:-18080}:8080"
+    volumes:
+      - document-data:/app/data/documents
+      - checkpoint-data:/app/data/checkpoints
+    depends_on:
+      bootstrap:
+        condition: service_completed_successfully
+      qdrant:
+        condition: service_started
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8080/api/v1/readiness"]
+      interval: 20s
+      timeout: 5s
+      retries: 10
+
+  document-worker:
+    build:
+      context: ..
+      dockerfile: deploy/server.Dockerfile
+    command: ["python", "-m", "app.workers.document_worker"]
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-smart_customer_service}
+      MYSQL_USERNAME: ${MYSQL_USERNAME:-root}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-change_me_local_mysql_password}
+      QDRANT_HOST: qdrant
+      QDRANT_PORT: 6333
+      EMBEDDING_MOCK_ENABLED: ${EMBEDDING_MOCK_ENABLED:-true}
+      EMBEDDING_API_KEY: ${EMBEDDING_API_KEY:-}
+      EMBEDDING_BASE_URL: ${EMBEDDING_BASE_URL:-http://127.0.0.1:9}
+      EMBEDDING_MODEL_NAME: ${EMBEDDING_MODEL_NAME:-text-embedding-3-small}
+      EMBEDDING_DIMENSION: ${EMBEDDING_DIMENSION:-384}
+      DOCUMENT_STORAGE_PATH: /app/data/documents
+    volumes:
+      - document-data:/app/data/documents
+    depends_on:
+      bootstrap:
+        condition: service_completed_successfully
+      qdrant:
+        condition: service_started
+      redis:
+        condition: service_healthy
+    healthcheck:
+      disable: true
+
+  web:
+    build:
+      context: ..
+      dockerfile: deploy/web.Dockerfile
+    ports:
+      - "${BIND_HOST:-127.0.0.1}:${WEB_HOST_PORT:-18088}:80"
+    depends_on:
+      server:
+        condition: service_healthy
+
+volumes:
+  mysql-data:
+  qdrant-data:
+  redis-data:
+  document-data:
+  checkpoint-data:
