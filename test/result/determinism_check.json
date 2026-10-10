@@ -9,17 +9,17 @@
       "profile": "llm-real",
       "statuses": [
         {
-          "dir": "seed-20261008",
+          "dir": "primary",
           "reason": "LLM_MOCK_ENABLED=true; EMBEDDING_MOCK_ENABLED=true",
           "status": "NOT_RUN"
         },
         {
-          "dir": "seed-20261009",
+          "dir": "replica-1",
           "reason": "LLM_MOCK_ENABLED=true; EMBEDDING_MOCK_ENABLED=true",
           "status": "NOT_RUN"
         },
         {
-          "dir": "seed-20261010",
+          "dir": "replica-2",
           "reason": "LLM_MOCK_ENABLED=true; EMBEDDING_MOCK_ENABLED=true",
           "status": "NOT_RUN"
         }
@@ -30,17 +30,17 @@
       "profile": "rag-real",
       "statuses": [
         {
-          "dir": "seed-20261008",
+          "dir": "primary",
           "reason": "LLM_MOCK_ENABLED=true; EMBEDDING_MOCK_ENABLED=true",
           "status": "NOT_RUN"
         },
         {
-          "dir": "seed-20261009",
+          "dir": "replica-1",
           "reason": "LLM_MOCK_ENABLED=true; EMBEDDING_MOCK_ENABLED=true",
           "status": "NOT_RUN"
         },
         {
-          "dir": "seed-20261010",
+          "dir": "replica-2",
           "reason": "LLM_MOCK_ENABLED=true; EMBEDDING_MOCK_ENABLED=true",
           "status": "NOT_RUN"
         }
@@ -82,7 +82,7 @@
               "rule:structured"
             ]
           },
-          "replica": "seed-20261009",
+          "replica": "replica-1",
           "replica_value": {
             "citations": [
               "document:0673bf91fb735e29c62683f21b17ed912d3d73bcd3520713ffe0fcd1696a28b2",
@@ -103,7 +103,7 @@
               "rule:structured"
             ]
           },
-          "replica": "seed-20261009",
+          "replica": "replica-1",
           "replica_value": {
             "citations": [
               "document:a6450be1a6ebe055eba5e06fa58642e0dd45ef9e2dcc28e2e291b7e866db82ee",
@@ -123,7 +123,7 @@
               "rule:structured"
             ]
           },
-          "replica": "seed-20261009",
+          "replica": "replica-1",
           "replica_value": {
             "citations": [
               "document:710546634fa4b1dcee3ede89112ee959a58852e5cf14cfe34d676fba7ae73bfe",
@@ -144,7 +144,7 @@
               "rule:structured"
             ]
           },
-          "replica": "seed-20261010",
+          "replica": "replica-2",
           "replica_value": {
             "citations": [
               "document:0673bf91fb735e29c62683f21b17ed912d3d73bcd3520713ffe0fcd1696a28b2",
@@ -165,7 +165,7 @@
               "rule:structured"
             ]
           },
-          "replica": "seed-20261010",
+          "replica": "replica-2",
           "replica_value": {
             "citations": [
               "document:a6450be1a6ebe055eba5e06fa58642e0dd45ef9e2dcc28e2e291b7e866db82ee",
@@ -185,7 +185,7 @@
               "rule:structured"
             ]
           },
-          "replica": "seed-20261010",
+          "replica": "replica-2",
           "replica_value": {
             "citations": [
               "document:710546634fa4b1dcee3ede89112ee959a58852e5cf14cfe34d676fba7ae73bfe",
@@ -199,10 +199,10 @@
       "replica_count": 2
     }
   },
-  "reference": "seed-20261008",
+  "reference": "primary",
   "replicas": [
-    "seed-20261009",
-    "seed-20261010"
+    "replica-1",
+    "replica-2"
   ],
   "verdict": "DETERMINISTIC"
 }

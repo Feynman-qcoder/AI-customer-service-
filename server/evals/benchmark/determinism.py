@@ -1,9 +1,9 @@
 """Three-seed determinism comparison for RESUME_AGENT_BENCHMARK_V1.
 
 Statistical rule 3: the deterministic profiles (workflow, security, recovery)
-run consecutively under the 20261008 / 20261009 / 20261010 seeds with no code,
-data, configuration or snapshot changes in between. Every case-level SCORED
-artifact must be identical across the three sessions; any difference marks
+run consecutively under three fixed seeds with no code, data, configuration
+or snapshot changes in between. Every case-level SCORED artifact must be
+identical across the three sessions; any difference marks
 NON_DETERMINISTIC_FAILURE. Wall-clock values (latency, timestamps) are
 excluded — they are not part of the deterministic contract.
 

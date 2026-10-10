@@ -1,6 +1,6 @@
 # RESUME_AGENT_BENCHMARK_V1 — Benchmark Report
 
-- Evidence directory: `test/results/seed-20261008` (sanitized publication copy)
+- Evidence directory: `test/result` (sanitized publication copy)
 - READY_FOR_RESUME_CLAIM: YES
 
 ## Hard gates
@@ -79,7 +79,7 @@
 
 - NOT_RUN: LLM_MOCK_ENABLED=true; EMBEDDING_MOCK_ENABLED=true
 
-## Determinism (seeds 20261008 / 20261009 / 20261010)
+## Determinism (three consecutive runs)
 
 - Verdict: DETERMINISTIC
 - Scored-artifact mismatches: 0

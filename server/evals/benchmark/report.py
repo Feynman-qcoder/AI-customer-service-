@@ -350,7 +350,7 @@ def generate_report(*, evidence_dir: Path) -> int:
 
     sentence = _resume_sentence(workflow, security, recovery, retrieval, llm)
     determinism = _load_json(evidence_dir / "determinism_check.json")
-    lines += ["", "## Determinism (seeds 20261008 / 20261009 / 20261010)", ""]
+    lines += ["", "## Determinism (three consecutive runs)", ""]
     if isinstance(determinism, dict):
         lines.append(f"- Verdict: {determinism.get('verdict')}")
         lines.append(

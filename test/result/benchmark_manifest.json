@@ -37,13 +37,13 @@
         "uncommitted_diff_sha256": "218fba84df4da110ba6f61fa96593a11249f8ff15be84d96780ab735cb0d6153"
       },
       "isolated_stack": {
-        "mysql_container": "dianshang-bmk-v1-mysql-llm-real-20261008",
+        "mysql_container": "dianshang-bmk-v1-mysql-llm-real",
         "mysql_image": "mysql:8.4",
         "mysql_port": "63717",
-        "qdrant_container": "dianshang-bmk-v1-qdrant-llm-real-20261008",
+        "qdrant_container": "dianshang-bmk-v1-qdrant-llm-real",
         "qdrant_image": "qdrant/qdrant:v1.12.5",
         "qdrant_port": "63718",
-        "redis_container": "dianshang-bmk-v1-redis-llm-real-20261008",
+        "redis_container": "dianshang-bmk-v1-redis-llm-real",
         "redis_image": "redis:7.4-alpine",
         "redis_port": "63719",
         "status": "ISOLATED"
@@ -115,13 +115,13 @@
         "uncommitted_diff_sha256": "218fba84df4da110ba6f61fa96593a11249f8ff15be84d96780ab735cb0d6153"
       },
       "isolated_stack": {
-        "mysql_container": "dianshang-bmk-v1-mysql-rag-real-20261008",
+        "mysql_container": "dianshang-bmk-v1-mysql-rag-real",
         "mysql_image": "mysql:8.4",
         "mysql_port": "56903",
-        "qdrant_container": "dianshang-bmk-v1-qdrant-rag-real-20261008",
+        "qdrant_container": "dianshang-bmk-v1-qdrant-rag-real",
         "qdrant_image": "qdrant/qdrant:v1.12.5",
         "qdrant_port": "56904",
-        "redis_container": "dianshang-bmk-v1-redis-rag-real-20261008",
+        "redis_container": "dianshang-bmk-v1-redis-rag-real",
         "redis_image": "redis:7.4-alpine",
         "redis_port": "56905",
         "status": "ISOLATED"
@@ -193,13 +193,13 @@
         "uncommitted_diff_sha256": "218fba84df4da110ba6f61fa96593a11249f8ff15be84d96780ab735cb0d6153"
       },
       "isolated_stack": {
-        "mysql_container": "dianshang-bmk-v1-mysql-recovery-20261008",
+        "mysql_container": "dianshang-bmk-v1-mysql-recovery",
         "mysql_image": "mysql:8.4",
         "mysql_port": "65342",
-        "qdrant_container": "dianshang-bmk-v1-qdrant-recovery-20261008",
+        "qdrant_container": "dianshang-bmk-v1-qdrant-recovery",
         "qdrant_image": "qdrant/qdrant:v1.12.5",
         "qdrant_port": "65343",
-        "redis_container": "dianshang-bmk-v1-redis-recovery-20261008",
+        "redis_container": "dianshang-bmk-v1-redis-recovery",
         "redis_image": "redis:7.4-alpine",
         "redis_port": "65344",
         "status": "ISOLATED"
@@ -271,13 +271,13 @@
         "uncommitted_diff_sha256": "218fba84df4da110ba6f61fa96593a11249f8ff15be84d96780ab735cb0d6153"
       },
       "isolated_stack": {
-        "mysql_container": "dianshang-bmk-v1-mysql-security-20261008",
+        "mysql_container": "dianshang-bmk-v1-mysql-security",
         "mysql_image": "mysql:8.4",
         "mysql_port": "63845",
-        "qdrant_container": "dianshang-bmk-v1-qdrant-security-20261008",
+        "qdrant_container": "dianshang-bmk-v1-qdrant-security",
         "qdrant_image": "qdrant/qdrant:v1.12.5",
         "qdrant_port": "63846",
-        "redis_container": "dianshang-bmk-v1-redis-security-20261008",
+        "redis_container": "dianshang-bmk-v1-redis-security",
         "redis_image": "redis:7.4-alpine",
         "redis_port": "63847",
         "status": "ISOLATED"
@@ -349,13 +349,13 @@
         "uncommitted_diff_sha256": "218fba84df4da110ba6f61fa96593a11249f8ff15be84d96780ab735cb0d6153"
       },
       "isolated_stack": {
-        "mysql_container": "dianshang-bmk-v1-mysql-workflow-20261008",
+        "mysql_container": "dianshang-bmk-v1-mysql-workflow",
         "mysql_image": "mysql:8.4",
         "mysql_port": "53281",
-        "qdrant_container": "dianshang-bmk-v1-qdrant-workflow-20261008",
+        "qdrant_container": "dianshang-bmk-v1-qdrant-workflow",
         "qdrant_image": "qdrant/qdrant:v1.12.5",
         "qdrant_port": "53282",
-        "redis_container": "dianshang-bmk-v1-redis-workflow-20261008",
+        "redis_container": "dianshang-bmk-v1-redis-workflow",
         "redis_image": "redis:7.4-alpine",
         "redis_port": "53283",
         "status": "ISOLATED"

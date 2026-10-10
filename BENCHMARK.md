@@ -28,11 +28,11 @@ ID、状态迁移与数据库事实决定；被测模型从不担任评分裁判
 cd server
 # 激活虚拟环境后（.venv\Scripts\Activate.ps1）
 python -m evals.run_resume_benchmark validate
-python -m evals.run_resume_benchmark workflow --seed 20261008
-python -m evals.run_resume_benchmark security --seed 20261008
-python -m evals.run_resume_benchmark recovery --seed 20261008
-python -m evals.run_resume_benchmark rag-real --seed 20261008
-python -m evals.run_resume_benchmark llm-real --seed 20261008
+python -m evals.run_resume_benchmark workflow
+python -m evals.run_resume_benchmark security
+python -m evals.run_resume_benchmark recovery
+python -m evals.run_resume_benchmark rag-real
+python -m evals.run_resume_benchmark llm-real
 python -m evals.run_resume_benchmark report --evidence-dir <绝对路径>
 python -m evals.run_resume_benchmark verify --evidence-dir <绝对路径>
 ```
@@ -139,7 +139,7 @@ per Request、Completion Token P50/P95、E2E Latency P50/P95/Max。
 - 比例类指标输出分子、分母与 Wilson 95% 置信区间。
 - MRR、差值与延迟使用固定随机种子（xorshift32）的 Bootstrap 95% 区间
   （10000 次，percentile 法）；percentile 采用 lower nearest-rank。
-- 确定性测试用 20261008 / 20261009 / 20261010 三个种子连续运行，
+- 确定性测试使用三个固定随机种子连续运行，
   期间不改代码、数据、配置与快照；三次结果不一致即标记
   `NON_DETERMINISTIC_FAILURE`。
 - 不删除失败样本、不重试失败用例、不挑选最好的一轮。
