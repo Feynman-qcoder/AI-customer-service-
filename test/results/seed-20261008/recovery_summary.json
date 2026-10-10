@@ -1,0 +1,50 @@
+{
+  "audit_missing_count": 0,
+  "duplicate_business_effect_count": 0,
+  "per_fault_point": {
+    "conflicting_approval_or_invalid_order_state": {
+      "denominator": 5,
+      "passed": 5
+    },
+    "lease_expiry_new_attempt_takeover": {
+      "denominator": 5,
+      "passed": 5
+    },
+    "same_approval_decision_replay": {
+      "denominator": 5,
+      "passed": 5
+    },
+    "stop_after_approval_before_prepare": {
+      "denominator": 5,
+      "passed": 5
+    },
+    "stop_after_confirmation_before_approval": {
+      "denominator": 5,
+      "passed": 5
+    },
+    "stop_after_execution_before_response": {
+      "denominator": 5,
+      "passed": 5
+    },
+    "stop_after_prepare_before_execution": {
+      "denominator": 5,
+      "passed": 5
+    },
+    "stop_before_user_confirmation": {
+      "denominator": 5,
+      "passed": 5
+    }
+  },
+  "recovery_duration": {
+    "p50_seconds": 1.547,
+    "p95_seconds": 1.781
+  },
+  "recovery_success_rate": {
+    "denominator": 40,
+    "numerator": 40,
+    "value": 1.0,
+    "wilson_high": 1.0,
+    "wilson_low": 0.9123783988027135
+  },
+  "stale_writer_accepted_count": 0
+}

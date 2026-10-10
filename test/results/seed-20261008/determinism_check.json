@@ -1,0 +1,208 @@
+{
+  "deterministic": true,
+  "diagnostic_difference_count_total": 6,
+  "judgment_mismatch_count_total": 0,
+  "mock_chain_diagnostic_note": "mock-chain diagnostic: raw citation candidate lists vary at the margin under Mock embeddings (noise dense channel + Qdrant approximate search over session-random point ids). It changed no scored artifact in any seed.",
+  "profiles": {
+    "llm-real": {
+      "deterministic": true,
+      "profile": "llm-real",
+      "statuses": [
+        {
+          "dir": "seed-20261008",
+          "reason": "LLM_MOCK_ENABLED=true; EMBEDDING_MOCK_ENABLED=true",
+          "status": "NOT_RUN"
+        },
+        {
+          "dir": "seed-20261009",
+          "reason": "LLM_MOCK_ENABLED=true; EMBEDDING_MOCK_ENABLED=true",
+          "status": "NOT_RUN"
+        },
+        {
+          "dir": "seed-20261010",
+          "reason": "LLM_MOCK_ENABLED=true; EMBEDDING_MOCK_ENABLED=true",
+          "status": "NOT_RUN"
+        }
+      ]
+    },
+    "rag-real": {
+      "deterministic": true,
+      "profile": "rag-real",
+      "statuses": [
+        {
+          "dir": "seed-20261008",
+          "reason": "LLM_MOCK_ENABLED=true; EMBEDDING_MOCK_ENABLED=true",
+          "status": "NOT_RUN"
+        },
+        {
+          "dir": "seed-20261009",
+          "reason": "LLM_MOCK_ENABLED=true; EMBEDDING_MOCK_ENABLED=true",
+          "status": "NOT_RUN"
+        },
+        {
+          "dir": "seed-20261010",
+          "reason": "LLM_MOCK_ENABLED=true; EMBEDDING_MOCK_ENABLED=true",
+          "status": "NOT_RUN"
+        }
+      ]
+    },
+    "recovery": {
+      "compared_cases": 40,
+      "deterministic": true,
+      "diagnostic_difference_count": 0,
+      "diagnostic_differences": [],
+      "judgment_mismatch_count": 0,
+      "judgment_mismatches": [],
+      "replica_count": 2
+    },
+    "security": {
+      "compared_cases": 60,
+      "deterministic": true,
+      "diagnostic_difference_count": 0,
+      "diagnostic_differences": [],
+      "judgment_mismatch_count": 0,
+      "judgment_mismatches": [],
+      "replica_count": 2
+    },
+    "workflow": {
+      "compared_cases": 120,
+      "deterministic": true,
+      "diagnostic_difference_count": 6,
+      "diagnostic_differences": [
+        {
+          "case_id": "wf_damaged_goods_10",
+          "fields": [
+            "citations"
+          ],
+          "reference": {
+            "citations": [
+              "document:0673bf91fb735e29c62683f21b17ed912d3d73bcd3520713ffe0fcd1696a28b2",
+              "document:69dbacf9c4073759369c008882d86068792b56d3f419bf72a2bf1e25c1fd8578",
+              "document:710546634fa4b1dcee3ede89112ee959a58852e5cf14cfe34d676fba7ae73bfe",
+              "rule:structured"
+            ]
+          },
+          "replica": "seed-20261009",
+          "replica_value": {
+            "citations": [
+              "document:0673bf91fb735e29c62683f21b17ed912d3d73bcd3520713ffe0fcd1696a28b2",
+              "document:69dbacf9c4073759369c008882d86068792b56d3f419bf72a2bf1e25c1fd8578",
+              "rule:structured"
+            ]
+          }
+        },
+        {
+          "case_id": "wf_refund_eligibility_03",
+          "fields": [
+            "citations"
+          ],
+          "reference": {
+            "citations": [
+              "document:710546634fa4b1dcee3ede89112ee959a58852e5cf14cfe34d676fba7ae73bfe",
+              "document:a6450be1a6ebe055eba5e06fa58642e0dd45ef9e2dcc28e2e291b7e866db82ee",
+              "rule:structured"
+            ]
+          },
+          "replica": "seed-20261009",
+          "replica_value": {
+            "citations": [
+              "document:a6450be1a6ebe055eba5e06fa58642e0dd45ef9e2dcc28e2e291b7e866db82ee",
+              "rule:structured"
+            ]
+          }
+        },
+        {
+          "case_id": "wf_refund_eligibility_08",
+          "fields": [
+            "citations"
+          ],
+          "reference": {
+            "citations": [
+              "document:710546634fa4b1dcee3ede89112ee959a58852e5cf14cfe34d676fba7ae73bfe",
+              "document:a6450be1a6ebe055eba5e06fa58642e0dd45ef9e2dcc28e2e291b7e866db82ee",
+              "rule:structured"
+            ]
+          },
+          "replica": "seed-20261009",
+          "replica_value": {
+            "citations": [
+              "document:710546634fa4b1dcee3ede89112ee959a58852e5cf14cfe34d676fba7ae73bfe",
+              "rule:structured"
+            ]
+          }
+        },
+        {
+          "case_id": "wf_damaged_goods_10",
+          "fields": [
+            "citations"
+          ],
+          "reference": {
+            "citations": [
+              "document:0673bf91fb735e29c62683f21b17ed912d3d73bcd3520713ffe0fcd1696a28b2",
+              "document:69dbacf9c4073759369c008882d86068792b56d3f419bf72a2bf1e25c1fd8578",
+              "document:710546634fa4b1dcee3ede89112ee959a58852e5cf14cfe34d676fba7ae73bfe",
+              "rule:structured"
+            ]
+          },
+          "replica": "seed-20261010",
+          "replica_value": {
+            "citations": [
+              "document:0673bf91fb735e29c62683f21b17ed912d3d73bcd3520713ffe0fcd1696a28b2",
+              "document:69dbacf9c4073759369c008882d86068792b56d3f419bf72a2bf1e25c1fd8578",
+              "rule:structured"
+            ]
+          }
+        },
+        {
+          "case_id": "wf_refund_eligibility_03",
+          "fields": [
+            "citations"
+          ],
+          "reference": {
+            "citations": [
+              "document:710546634fa4b1dcee3ede89112ee959a58852e5cf14cfe34d676fba7ae73bfe",
+              "document:a6450be1a6ebe055eba5e06fa58642e0dd45ef9e2dcc28e2e291b7e866db82ee",
+              "rule:structured"
+            ]
+          },
+          "replica": "seed-20261010",
+          "replica_value": {
+            "citations": [
+              "document:a6450be1a6ebe055eba5e06fa58642e0dd45ef9e2dcc28e2e291b7e866db82ee",
+              "rule:structured"
+            ]
+          }
+        },
+        {
+          "case_id": "wf_refund_eligibility_08",
+          "fields": [
+            "citations"
+          ],
+          "reference": {
+            "citations": [
+              "document:710546634fa4b1dcee3ede89112ee959a58852e5cf14cfe34d676fba7ae73bfe",
+              "document:a6450be1a6ebe055eba5e06fa58642e0dd45ef9e2dcc28e2e291b7e866db82ee",
+              "rule:structured"
+            ]
+          },
+          "replica": "seed-20261010",
+          "replica_value": {
+            "citations": [
+              "document:710546634fa4b1dcee3ede89112ee959a58852e5cf14cfe34d676fba7ae73bfe",
+              "rule:structured"
+            ]
+          }
+        }
+      ],
+      "judgment_mismatch_count": 0,
+      "judgment_mismatches": [],
+      "replica_count": 2
+    }
+  },
+  "reference": "seed-20261008",
+  "replicas": [
+    "seed-20261009",
+    "seed-20261010"
+  ],
+  "verdict": "DETERMINISTIC"
+}

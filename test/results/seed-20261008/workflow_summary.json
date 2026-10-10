@@ -1,0 +1,320 @@
+{
+  "confirmation_accuracy": {
+    "denominator": 120,
+    "numerator": 112,
+    "value": 0.9333333333333333,
+    "wilson_high": 0.9658346931390938,
+    "wilson_low": 0.8739486959646967
+  },
+  "elapsed_seconds": 145.89,
+  "high_risk_intercept_rate": {
+    "denominator": 32,
+    "numerator": 26,
+    "value": 0.8125,
+    "wilson_high": 0.9111045531043405,
+    "wilson_low": 0.6469084479862404
+  },
+  "intent_macro_f1": {
+    "macro_f1": 0.6852,
+    "per_intent": {
+      "CANCEL_ORDER": {
+        "f1": 1.0,
+        "gold_count": 16,
+        "precision": 1.0,
+        "predicted_count": 16,
+        "recall": 1.0
+      },
+      "CLARIFICATION": {
+        "f1": 0.3333,
+        "gold_count": 10,
+        "precision": 1.0,
+        "predicted_count": 2,
+        "recall": 0.2
+      },
+      "KNOWLEDGE_QUERY": {
+        "f1": 0.8649,
+        "gold_count": 38,
+        "precision": 0.8889,
+        "predicted_count": 36,
+        "recall": 0.8421
+      },
+      "ORDER_QUERY": {
+        "f1": 0.375,
+        "gold_count": 10,
+        "precision": 0.2727,
+        "predicted_count": 22,
+        "recall": 0.6
+      },
+      "PRODUCT_QUERY": {
+        "f1": 0.6154,
+        "gold_count": 14,
+        "precision": 0.6667,
+        "predicted_count": 12,
+        "recall": 0.5714
+      },
+      "REFUND_REQUEST": {
+        "f1": 0.6667,
+        "gold_count": 16,
+        "precision": 0.7143,
+        "predicted_count": 14,
+        "recall": 0.625
+      },
+      "SHIPPING_QUERY": {
+        "f1": 0.9412,
+        "gold_count": 16,
+        "precision": 0.8889,
+        "predicted_count": 18,
+        "recall": 1.0
+      }
+    }
+  },
+  "layered_memory_ablation": {
+    "case_count": 20,
+    "current_question_only": {
+      "denominator": 20,
+      "numerator": 1,
+      "value": 0.05,
+      "wilson_high": 0.23613119344674205,
+      "wilson_low": 0.008881448800795402
+    },
+    "full_context": {
+      "denominator": 20,
+      "numerator": 18,
+      "value": 0.9,
+      "wilson_high": 0.9721335187862319,
+      "wilson_low": 0.6989663547715128
+    },
+    "strict_success_delta_full_minus_current": {
+      "bootstrap_high": 1.0,
+      "bootstrap_low": 0.65,
+      "point": 0.85
+    }
+  },
+  "per_category": {
+    "after_sale_policy": {
+      "citations_pass": 4,
+      "confirmation_pass": 10,
+      "denominator": 10,
+      "facts_pass": 2,
+      "intent_pass": 8,
+      "mutation_pass": 10,
+      "risk_pass": 10,
+      "strict_success": {
+        "denominator": 10,
+        "numerator": 2,
+        "value": 0.2,
+        "wilson_high": 0.5098375284633583,
+        "wilson_low": 0.05668215145437519
+      },
+      "tools_pass": 8
+    },
+    "cancel_order": {
+      "citations_pass": 10,
+      "confirmation_pass": 10,
+      "denominator": 10,
+      "facts_pass": 10,
+      "intent_pass": 10,
+      "mutation_pass": 10,
+      "risk_pass": 10,
+      "strict_success": {
+        "denominator": 10,
+        "numerator": 10,
+        "value": 1.0,
+        "wilson_high": 0.9999999999999999,
+        "wilson_low": 0.7224672001371107
+      },
+      "tools_pass": 10
+    },
+    "clarification_invalid_product": {
+      "citations_pass": 10,
+      "confirmation_pass": 10,
+      "denominator": 10,
+      "facts_pass": 2,
+      "intent_pass": 2,
+      "mutation_pass": 10,
+      "risk_pass": 10,
+      "strict_success": {
+        "denominator": 10,
+        "numerator": 2,
+        "value": 0.2,
+        "wilson_high": 0.5098375284633583,
+        "wilson_low": 0.05668215145437519
+      },
+      "tools_pass": 2
+    },
+    "damaged_goods": {
+      "citations_pass": 8,
+      "confirmation_pass": 10,
+      "denominator": 10,
+      "facts_pass": 8,
+      "intent_pass": 8,
+      "mutation_pass": 10,
+      "risk_pass": 10,
+      "strict_success": {
+        "denominator": 10,
+        "numerator": 8,
+        "value": 0.8,
+        "wilson_high": 0.9433178485456248,
+        "wilson_low": 0.4901624715366418
+      },
+      "tools_pass": 8
+    },
+    "multi_turn_reference": {
+      "citations_pass": 10,
+      "confirmation_pass": 10,
+      "denominator": 10,
+      "facts_pass": 10,
+      "intent_pass": 10,
+      "mutation_pass": 10,
+      "risk_pass": 10,
+      "strict_success": {
+        "denominator": 10,
+        "numerator": 10,
+        "value": 1.0,
+        "wilson_high": 0.9999999999999999,
+        "wilson_low": 0.7224672001371107
+      },
+      "tools_pass": 10
+    },
+    "no_answer_insufficient_knowledge": {
+      "citations_pass": 10,
+      "confirmation_pass": 10,
+      "denominator": 10,
+      "facts_pass": 10,
+      "intent_pass": 10,
+      "mutation_pass": 10,
+      "risk_pass": 10,
+      "strict_success": {
+        "denominator": 10,
+        "numerator": 10,
+        "value": 1.0,
+        "wilson_high": 0.9999999999999999,
+        "wilson_low": 0.7224672001371107
+      },
+      "tools_pass": 10
+    },
+    "order_query": {
+      "citations_pass": 10,
+      "confirmation_pass": 10,
+      "denominator": 10,
+      "facts_pass": 8,
+      "intent_pass": 8,
+      "mutation_pass": 10,
+      "risk_pass": 10,
+      "strict_success": {
+        "denominator": 10,
+        "numerator": 8,
+        "value": 0.8,
+        "wilson_high": 0.9433178485456248,
+        "wilson_low": 0.4901624715366418
+      },
+      "tools_pass": 8
+    },
+    "product_inventory": {
+      "citations_pass": 4,
+      "confirmation_pass": 10,
+      "denominator": 10,
+      "facts_pass": 6,
+      "intent_pass": 4,
+      "mutation_pass": 10,
+      "risk_pass": 10,
+      "strict_success": {
+        "denominator": 10,
+        "numerator": 4,
+        "value": 0.4,
+        "wilson_high": 0.6873262302663417,
+        "wilson_low": 0.16818032970623614
+      },
+      "tools_pass": 4
+    },
+    "refund_action": {
+      "citations_pass": 10,
+      "confirmation_pass": 8,
+      "denominator": 10,
+      "facts_pass": 8,
+      "intent_pass": 8,
+      "mutation_pass": 10,
+      "risk_pass": 8,
+      "strict_success": {
+        "denominator": 10,
+        "numerator": 8,
+        "value": 0.8,
+        "wilson_high": 0.9433178485456248,
+        "wilson_low": 0.4901624715366418
+      },
+      "tools_pass": 8
+    },
+    "refund_eligibility": {
+      "citations_pass": 6,
+      "confirmation_pass": 8,
+      "denominator": 10,
+      "facts_pass": 6,
+      "intent_pass": 6,
+      "mutation_pass": 10,
+      "risk_pass": 6,
+      "strict_success": {
+        "denominator": 10,
+        "numerator": 4,
+        "value": 0.4,
+        "wilson_high": 0.6873262302663417,
+        "wilson_low": 0.16818032970623614
+      },
+      "tools_pass": 6
+    },
+    "risk_identification": {
+      "citations_pass": 10,
+      "confirmation_pass": 6,
+      "denominator": 10,
+      "facts_pass": 6,
+      "intent_pass": 6,
+      "mutation_pass": 10,
+      "risk_pass": 6,
+      "strict_success": {
+        "denominator": 10,
+        "numerator": 6,
+        "value": 0.6,
+        "wilson_high": 0.8318196702937638,
+        "wilson_low": 0.31267376973365824
+      },
+      "tools_pass": 6
+    },
+    "shipping_query": {
+      "citations_pass": 10,
+      "confirmation_pass": 10,
+      "denominator": 10,
+      "facts_pass": 10,
+      "intent_pass": 10,
+      "mutation_pass": 10,
+      "risk_pass": 10,
+      "strict_success": {
+        "denominator": 10,
+        "numerator": 10,
+        "value": 1.0,
+        "wilson_high": 0.9999999999999999,
+        "wilson_low": 0.7224672001371107
+      },
+      "tools_pass": 10
+    }
+  },
+  "risk_accuracy": {
+    "denominator": 120,
+    "numerator": 110,
+    "value": 0.9166666666666666,
+    "wilson_high": 0.9541063496250703,
+    "wilson_low": 0.8533776783593434
+  },
+  "strict_success": {
+    "denominator": 120,
+    "numerator": 82,
+    "value": 0.6833333333333333,
+    "wilson_high": 0.7597716539580108,
+    "wilson_low": 0.5955213183551313
+  },
+  "tool_exact_match": {
+    "denominator": 120,
+    "numerator": 90,
+    "value": 0.75,
+    "wilson_high": 0.8189017834319043,
+    "wilson_low": 0.665588633358744
+  }
+}

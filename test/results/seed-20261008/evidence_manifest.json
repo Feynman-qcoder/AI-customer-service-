@@ -1,0 +1,41 @@
+{
+  "files": {
+    "benchmark_manifest.json": {
+      "sha256": "5eb6900ae654055b69153ffee09b145af210a4885dfb38d32a6fb9bda1ce548f",
+      "size_bytes": 17936
+    },
+    "benchmark_report.md": {
+      "sha256": "6b9d9cfbdaeed377e9ea2091ef38399e49624cef7140adaac17cb869bd145c95",
+      "size_bytes": 3863
+    },
+    "determinism_check.json": {
+      "sha256": "315e7aecbb6cdd318ceb864d867ae7ab1905f8e23b363841028fecd211b08ccb",
+      "size_bytes": 6785
+    },
+    "junit.xml": {
+      "sha256": "c33806a26aef21522f2b3ec4f025e8aa6aef486e5f3c9a4b41d943f929773fcb",
+      "size_bytes": 1122
+    },
+    "llm_summary.json": {
+      "sha256": "ab488c767f520c74b259e981c776508e51282df6e8352ef09b29727b3926a693",
+      "size_bytes": 198
+    },
+    "recovery_summary.json": {
+      "sha256": "341cadf7c154997f510112acc520f8278bef004b767221bedcf14d2cbb41f4ec",
+      "size_bytes": 1122
+    },
+    "retrieval_ablation_summary.json": {
+      "sha256": "f0a1c794bb735c90d4b3dd6dcc357962ff62d19d7302c19cca3649051e261fd1",
+      "size_bytes": 204
+    },
+    "security_summary.json": {
+      "sha256": "e2b36bca347c1e3f656d40a88483b0d990fa13f971e8d0e69777bbf49d546212",
+      "size_bytes": 1889
+    },
+    "workflow_summary.json": {
+      "sha256": "3956bd5136f576a5c72d23457ae929d86bfba7e12dc6ab35fc124a192dd4be33",
+      "size_bytes": 7903
+    }
+  },
+  "generated_at": "2026-10-09T04:31:36.789207Z"
+}

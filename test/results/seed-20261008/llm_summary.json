@@ -1,0 +1,5 @@
+{
+  "reason": "LLM_MOCK_ENABLED=true; EMBEDDING_MOCK_ENABLED=true",
+  "rule": "real LLM provider unavailable; deterministic fallbacks are never counted as real-LLM success",
+  "status": "NOT_RUN"
+}

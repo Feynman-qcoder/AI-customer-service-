@@ -1,0 +1,41 @@
+{
+  "benchmark_version": "resume_benchmark_v1.2",
+  "datasets": {
+    "llm_real_v1.jsonl": {
+      "record_count": 30,
+      "sha256": "3b48a872943078943615a2a7b257999ce287eed545edc794a13133a027fc8ec7"
+    },
+    "rag_holdout_v1.jsonl": {
+      "record_count": 60,
+      "sha256": "560085f0ac55f7e5df28d08df988870d2a22ce6f34951c4e349ffb34c714148c"
+    },
+    "recovery_matrix_v1.jsonl": {
+      "record_count": 40,
+      "sha256": "98dc196cbafb5df2608b35d1dc0c94c2312b47bd1bd550a6d2ec9ff7d09ca4a7"
+    },
+    "security_holdout_v1.jsonl": {
+      "record_count": 60,
+      "sha256": "248ed4af64bb552c9ce2d6d6ad27a43a3e97045b01e599e3a5329677b50d9f87"
+    },
+    "workflow_holdout_v1.jsonl": {
+      "record_count": 120,
+      "sha256": "c3e389fa338ea8deb15869ba124823e627010019c623c4cf19adea98049eedc9"
+    }
+  },
+  "deduplication": {
+    "compared_against": "after_sale_v2",
+    "method": "word-3gram-jaccard",
+    "threshold": 0.85,
+    "violations": 0
+  },
+  "knowledge_documents": {
+    "发货与物流规则.md": "document:0d4b87852c2e2fed907b4d9f74e24b41c0baf719c730f4fcef4ff06e27d5e287",
+    "商品损坏售后流程.md": "document:69dbacf9c4073759369c008882d86068792b56d3f419bf72a2bf1e25c1fd8578",
+    "商品资料-云感靠枕P9.md": "document:1fd5f8d68613704481ab9f331371b9fca1af46ce2878c7456b05da34bd7e24ca",
+    "商品资料-暖风杯H100.md": "document:021fac5682d716f961a9d4375d0da7747d990a211ff6d1119ec15136559ebb04",
+    "商品资料-轻氧洗面巾C20.md": "document:0673bf91fb735e29c62683f21b17ed912d3d73bcd3520713ffe0fcd1696a28b2",
+    "账号问题处理指南.md": "document:c6bcfa91a29cb2190f54b0026a69678a70d147c242e939b691a27e3d14868031",
+    "退换货政策.md": "document:710546634fa4b1dcee3ede89112ee959a58852e5cf14cfe34d676fba7ae73bfe",
+    "退款处理说明.md": "document:a6450be1a6ebe055eba5e06fa58642e0dd45ef9e2dcc28e2e291b7e866db82ee"
+  }
+}

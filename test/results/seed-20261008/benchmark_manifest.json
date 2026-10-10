@@ -1,0 +1,397 @@
+{
+  "benchmark_version": "resume_benchmark_v1.2",
+  "finished_at": "2026-10-08T05:21:56.536356Z",
+  "profiles": {
+    "llm-real": {
+      "datasets": {
+        "datasets_frozen.json": {
+          "sha256": "daf0ca1108551997a638d6d23f1243bf6679a704d6a9d8575d79292099338e65"
+        },
+        "llm_real_v1.jsonl": {
+          "record_count": "30",
+          "sha256": "3b48a872943078943615a2a7b257999ce287eed545edc794a13133a027fc8ec7"
+        },
+        "rag_holdout_v1.jsonl": {
+          "record_count": "60",
+          "sha256": "560085f0ac55f7e5df28d08df988870d2a22ce6f34951c4e349ffb34c714148c"
+        },
+        "recovery_matrix_v1.jsonl": {
+          "record_count": "40",
+          "sha256": "98dc196cbafb5df2608b35d1dc0c94c2312b47bd1bd550a6d2ec9ff7d09ca4a7"
+        },
+        "security_holdout_v1.jsonl": {
+          "record_count": "60",
+          "sha256": "248ed4af64bb552c9ce2d6d6ad27a43a3e97045b01e599e3a5329677b50d9f87"
+        },
+        "workflow_holdout_v1.jsonl": {
+          "record_count": "120",
+          "sha256": "c3e389fa338ea8deb15869ba124823e627010019c623c4cf19adea98049eedc9"
+        }
+      },
+      "finished_at": "2026-10-08T05:21:55.857483Z",
+      "git": {
+        "git_branch": "main",
+        "git_head": "f71450ee156788a0aef7ac4565d6dba7cb6b590d",
+        "git_tree_sha": "5153faa81f45d4fedf7c47c95a183d34520a18e0",
+        "uncommitted_change_count": "12",
+        "uncommitted_diff_sha256": "218fba84df4da110ba6f61fa96593a11249f8ff15be84d96780ab735cb0d6153"
+      },
+      "isolated_stack": {
+        "mysql_container": "dianshang-bmk-v1-mysql-llm-real-20261008",
+        "mysql_image": "mysql:8.4",
+        "mysql_port": "63717",
+        "qdrant_container": "dianshang-bmk-v1-qdrant-llm-real-20261008",
+        "qdrant_image": "qdrant/qdrant:v1.12.5",
+        "qdrant_port": "63718",
+        "redis_container": "dianshang-bmk-v1-redis-llm-real-20261008",
+        "redis_image": "redis:7.4-alpine",
+        "redis_port": "63719",
+        "status": "ISOLATED"
+      },
+      "knowledge_documents": {
+        "发货与物流规则.md": "document:0d4b87852c2e2fed907b4d9f74e24b41c0baf719c730f4fcef4ff06e27d5e287",
+        "商品损坏售后流程.md": "document:69dbacf9c4073759369c008882d86068792b56d3f419bf72a2bf1e25c1fd8578",
+        "商品资料-云感靠枕P9.md": "document:1fd5f8d68613704481ab9f331371b9fca1af46ce2878c7456b05da34bd7e24ca",
+        "商品资料-暖风杯H100.md": "document:021fac5682d716f961a9d4375d0da7747d990a211ff6d1119ec15136559ebb04",
+        "商品资料-轻氧洗面巾C20.md": "document:0673bf91fb735e29c62683f21b17ed912d3d73bcd3520713ffe0fcd1696a28b2",
+        "账号问题处理指南.md": "document:c6bcfa91a29cb2190f54b0026a69678a70d147c242e939b691a27e3d14868031",
+        "退换货政策.md": "document:710546634fa4b1dcee3ede89112ee959a58852e5cf14cfe34d676fba7ae73bfe",
+        "退款处理说明.md": "document:a6450be1a6ebe055eba5e06fa58642e0dd45ef9e2dcc28e2e291b7e866db82ee"
+      },
+      "profile": "llm-real",
+      "profile_runs": [],
+      "python_version": "3.12.7",
+      "run": {
+        "exit_code": 2,
+        "profile": "llm-real"
+      },
+      "runtime": {
+        "checkpoint_backend": "sqlite",
+        "durable_customer_interrupt_enabled": false,
+        "embedding_mock_enabled": true,
+        "embedding_model": "qwen3.7-text-embedding",
+        "embedding_provider": "mock",
+        "llm_max_completion_tokens": 512,
+        "llm_mock_enabled": true,
+        "llm_model": "deepseek-v4-flash",
+        "llm_provider": "mock",
+        "llm_request_timeout_seconds": 12,
+        "llm_temperature": 0.2
+      },
+      "started_at": "2026-10-08T05:21:40.563480Z"
+    },
+    "rag-real": {
+      "datasets": {
+        "datasets_frozen.json": {
+          "sha256": "daf0ca1108551997a638d6d23f1243bf6679a704d6a9d8575d79292099338e65"
+        },
+        "llm_real_v1.jsonl": {
+          "record_count": "30",
+          "sha256": "3b48a872943078943615a2a7b257999ce287eed545edc794a13133a027fc8ec7"
+        },
+        "rag_holdout_v1.jsonl": {
+          "record_count": "60",
+          "sha256": "560085f0ac55f7e5df28d08df988870d2a22ce6f34951c4e349ffb34c714148c"
+        },
+        "recovery_matrix_v1.jsonl": {
+          "record_count": "40",
+          "sha256": "98dc196cbafb5df2608b35d1dc0c94c2312b47bd1bd550a6d2ec9ff7d09ca4a7"
+        },
+        "security_holdout_v1.jsonl": {
+          "record_count": "60",
+          "sha256": "248ed4af64bb552c9ce2d6d6ad27a43a3e97045b01e599e3a5329677b50d9f87"
+        },
+        "workflow_holdout_v1.jsonl": {
+          "record_count": "120",
+          "sha256": "c3e389fa338ea8deb15869ba124823e627010019c623c4cf19adea98049eedc9"
+        }
+      },
+      "finished_at": "2026-10-08T05:21:38.455969Z",
+      "git": {
+        "git_branch": "main",
+        "git_head": "f71450ee156788a0aef7ac4565d6dba7cb6b590d",
+        "git_tree_sha": "5153faa81f45d4fedf7c47c95a183d34520a18e0",
+        "uncommitted_change_count": "12",
+        "uncommitted_diff_sha256": "218fba84df4da110ba6f61fa96593a11249f8ff15be84d96780ab735cb0d6153"
+      },
+      "isolated_stack": {
+        "mysql_container": "dianshang-bmk-v1-mysql-rag-real-20261008",
+        "mysql_image": "mysql:8.4",
+        "mysql_port": "56903",
+        "qdrant_container": "dianshang-bmk-v1-qdrant-rag-real-20261008",
+        "qdrant_image": "qdrant/qdrant:v1.12.5",
+        "qdrant_port": "56904",
+        "redis_container": "dianshang-bmk-v1-redis-rag-real-20261008",
+        "redis_image": "redis:7.4-alpine",
+        "redis_port": "56905",
+        "status": "ISOLATED"
+      },
+      "knowledge_documents": {
+        "发货与物流规则.md": "document:0d4b87852c2e2fed907b4d9f74e24b41c0baf719c730f4fcef4ff06e27d5e287",
+        "商品损坏售后流程.md": "document:69dbacf9c4073759369c008882d86068792b56d3f419bf72a2bf1e25c1fd8578",
+        "商品资料-云感靠枕P9.md": "document:1fd5f8d68613704481ab9f331371b9fca1af46ce2878c7456b05da34bd7e24ca",
+        "商品资料-暖风杯H100.md": "document:021fac5682d716f961a9d4375d0da7747d990a211ff6d1119ec15136559ebb04",
+        "商品资料-轻氧洗面巾C20.md": "document:0673bf91fb735e29c62683f21b17ed912d3d73bcd3520713ffe0fcd1696a28b2",
+        "账号问题处理指南.md": "document:c6bcfa91a29cb2190f54b0026a69678a70d147c242e939b691a27e3d14868031",
+        "退换货政策.md": "document:710546634fa4b1dcee3ede89112ee959a58852e5cf14cfe34d676fba7ae73bfe",
+        "退款处理说明.md": "document:a6450be1a6ebe055eba5e06fa58642e0dd45ef9e2dcc28e2e291b7e866db82ee"
+      },
+      "profile": "rag-real",
+      "profile_runs": [],
+      "python_version": "3.12.7",
+      "run": {
+        "exit_code": 2,
+        "profile": "rag-real"
+      },
+      "runtime": {
+        "checkpoint_backend": "sqlite",
+        "durable_customer_interrupt_enabled": false,
+        "embedding_mock_enabled": true,
+        "embedding_model": "qwen3.7-text-embedding",
+        "embedding_provider": "mock",
+        "llm_max_completion_tokens": 512,
+        "llm_mock_enabled": true,
+        "llm_model": "deepseek-v4-flash",
+        "llm_provider": "mock",
+        "llm_request_timeout_seconds": 12,
+        "llm_temperature": 0.2
+      },
+      "started_at": "2026-10-08T05:21:23.715578Z"
+    },
+    "recovery": {
+      "datasets": {
+        "datasets_frozen.json": {
+          "sha256": "daf0ca1108551997a638d6d23f1243bf6679a704d6a9d8575d79292099338e65"
+        },
+        "llm_real_v1.jsonl": {
+          "record_count": "30",
+          "sha256": "3b48a872943078943615a2a7b257999ce287eed545edc794a13133a027fc8ec7"
+        },
+        "rag_holdout_v1.jsonl": {
+          "record_count": "60",
+          "sha256": "560085f0ac55f7e5df28d08df988870d2a22ce6f34951c4e349ffb34c714148c"
+        },
+        "recovery_matrix_v1.jsonl": {
+          "record_count": "40",
+          "sha256": "98dc196cbafb5df2608b35d1dc0c94c2312b47bd1bd550a6d2ec9ff7d09ca4a7"
+        },
+        "security_holdout_v1.jsonl": {
+          "record_count": "60",
+          "sha256": "248ed4af64bb552c9ce2d6d6ad27a43a3e97045b01e599e3a5329677b50d9f87"
+        },
+        "workflow_holdout_v1.jsonl": {
+          "record_count": "120",
+          "sha256": "c3e389fa338ea8deb15869ba124823e627010019c623c4cf19adea98049eedc9"
+        }
+      },
+      "finished_at": "2026-10-08T05:21:21.182799Z",
+      "git": {
+        "git_branch": "main",
+        "git_head": "f71450ee156788a0aef7ac4565d6dba7cb6b590d",
+        "git_tree_sha": "5153faa81f45d4fedf7c47c95a183d34520a18e0",
+        "uncommitted_change_count": "12",
+        "uncommitted_diff_sha256": "218fba84df4da110ba6f61fa96593a11249f8ff15be84d96780ab735cb0d6153"
+      },
+      "isolated_stack": {
+        "mysql_container": "dianshang-bmk-v1-mysql-recovery-20261008",
+        "mysql_image": "mysql:8.4",
+        "mysql_port": "65342",
+        "qdrant_container": "dianshang-bmk-v1-qdrant-recovery-20261008",
+        "qdrant_image": "qdrant/qdrant:v1.12.5",
+        "qdrant_port": "65343",
+        "redis_container": "dianshang-bmk-v1-redis-recovery-20261008",
+        "redis_image": "redis:7.4-alpine",
+        "redis_port": "65344",
+        "status": "ISOLATED"
+      },
+      "knowledge_documents": {
+        "发货与物流规则.md": "document:0d4b87852c2e2fed907b4d9f74e24b41c0baf719c730f4fcef4ff06e27d5e287",
+        "商品损坏售后流程.md": "document:69dbacf9c4073759369c008882d86068792b56d3f419bf72a2bf1e25c1fd8578",
+        "商品资料-云感靠枕P9.md": "document:1fd5f8d68613704481ab9f331371b9fca1af46ce2878c7456b05da34bd7e24ca",
+        "商品资料-暖风杯H100.md": "document:021fac5682d716f961a9d4375d0da7747d990a211ff6d1119ec15136559ebb04",
+        "商品资料-轻氧洗面巾C20.md": "document:0673bf91fb735e29c62683f21b17ed912d3d73bcd3520713ffe0fcd1696a28b2",
+        "账号问题处理指南.md": "document:c6bcfa91a29cb2190f54b0026a69678a70d147c242e939b691a27e3d14868031",
+        "退换货政策.md": "document:710546634fa4b1dcee3ede89112ee959a58852e5cf14cfe34d676fba7ae73bfe",
+        "退款处理说明.md": "document:a6450be1a6ebe055eba5e06fa58642e0dd45ef9e2dcc28e2e291b7e866db82ee"
+      },
+      "profile": "recovery",
+      "profile_runs": [],
+      "python_version": "3.12.7",
+      "run": {
+        "exit_code": 0,
+        "profile": "recovery"
+      },
+      "runtime": {
+        "checkpoint_backend": "sqlite",
+        "durable_customer_interrupt_enabled": false,
+        "embedding_mock_enabled": true,
+        "embedding_model": "qwen3.7-text-embedding",
+        "embedding_provider": "mock",
+        "llm_max_completion_tokens": 512,
+        "llm_mock_enabled": true,
+        "llm_model": "deepseek-v4-flash",
+        "llm_provider": "mock",
+        "llm_request_timeout_seconds": 12,
+        "llm_temperature": 0.2
+      },
+      "started_at": "2026-10-08T05:19:44.679354Z"
+    },
+    "security": {
+      "datasets": {
+        "datasets_frozen.json": {
+          "sha256": "daf0ca1108551997a638d6d23f1243bf6679a704d6a9d8575d79292099338e65"
+        },
+        "llm_real_v1.jsonl": {
+          "record_count": "30",
+          "sha256": "3b48a872943078943615a2a7b257999ce287eed545edc794a13133a027fc8ec7"
+        },
+        "rag_holdout_v1.jsonl": {
+          "record_count": "60",
+          "sha256": "560085f0ac55f7e5df28d08df988870d2a22ce6f34951c4e349ffb34c714148c"
+        },
+        "recovery_matrix_v1.jsonl": {
+          "record_count": "40",
+          "sha256": "98dc196cbafb5df2608b35d1dc0c94c2312b47bd1bd550a6d2ec9ff7d09ca4a7"
+        },
+        "security_holdout_v1.jsonl": {
+          "record_count": "60",
+          "sha256": "248ed4af64bb552c9ce2d6d6ad27a43a3e97045b01e599e3a5329677b50d9f87"
+        },
+        "workflow_holdout_v1.jsonl": {
+          "record_count": "120",
+          "sha256": "c3e389fa338ea8deb15869ba124823e627010019c623c4cf19adea98049eedc9"
+        }
+      },
+      "finished_at": "2026-10-08T05:19:42.164463Z",
+      "git": {
+        "git_branch": "main",
+        "git_head": "f71450ee156788a0aef7ac4565d6dba7cb6b590d",
+        "git_tree_sha": "5153faa81f45d4fedf7c47c95a183d34520a18e0",
+        "uncommitted_change_count": "12",
+        "uncommitted_diff_sha256": "218fba84df4da110ba6f61fa96593a11249f8ff15be84d96780ab735cb0d6153"
+      },
+      "isolated_stack": {
+        "mysql_container": "dianshang-bmk-v1-mysql-security-20261008",
+        "mysql_image": "mysql:8.4",
+        "mysql_port": "63845",
+        "qdrant_container": "dianshang-bmk-v1-qdrant-security-20261008",
+        "qdrant_image": "qdrant/qdrant:v1.12.5",
+        "qdrant_port": "63846",
+        "redis_container": "dianshang-bmk-v1-redis-security-20261008",
+        "redis_image": "redis:7.4-alpine",
+        "redis_port": "63847",
+        "status": "ISOLATED"
+      },
+      "knowledge_documents": {
+        "发货与物流规则.md": "document:0d4b87852c2e2fed907b4d9f74e24b41c0baf719c730f4fcef4ff06e27d5e287",
+        "商品损坏售后流程.md": "document:69dbacf9c4073759369c008882d86068792b56d3f419bf72a2bf1e25c1fd8578",
+        "商品资料-云感靠枕P9.md": "document:1fd5f8d68613704481ab9f331371b9fca1af46ce2878c7456b05da34bd7e24ca",
+        "商品资料-暖风杯H100.md": "document:021fac5682d716f961a9d4375d0da7747d990a211ff6d1119ec15136559ebb04",
+        "商品资料-轻氧洗面巾C20.md": "document:0673bf91fb735e29c62683f21b17ed912d3d73bcd3520713ffe0fcd1696a28b2",
+        "账号问题处理指南.md": "document:c6bcfa91a29cb2190f54b0026a69678a70d147c242e939b691a27e3d14868031",
+        "退换货政策.md": "document:710546634fa4b1dcee3ede89112ee959a58852e5cf14cfe34d676fba7ae73bfe",
+        "退款处理说明.md": "document:a6450be1a6ebe055eba5e06fa58642e0dd45ef9e2dcc28e2e291b7e866db82ee"
+      },
+      "profile": "security",
+      "profile_runs": [],
+      "python_version": "3.12.7",
+      "run": {
+        "exit_code": 0,
+        "profile": "security"
+      },
+      "runtime": {
+        "checkpoint_backend": "sqlite",
+        "durable_customer_interrupt_enabled": false,
+        "embedding_mock_enabled": true,
+        "embedding_model": "qwen3.7-text-embedding",
+        "embedding_provider": "mock",
+        "llm_max_completion_tokens": 512,
+        "llm_mock_enabled": true,
+        "llm_model": "deepseek-v4-flash",
+        "llm_provider": "mock",
+        "llm_request_timeout_seconds": 12,
+        "llm_temperature": 0.2
+      },
+      "started_at": "2026-10-08T05:16:32.990318Z"
+    },
+    "workflow": {
+      "datasets": {
+        "datasets_frozen.json": {
+          "sha256": "daf0ca1108551997a638d6d23f1243bf6679a704d6a9d8575d79292099338e65"
+        },
+        "llm_real_v1.jsonl": {
+          "record_count": "30",
+          "sha256": "3b48a872943078943615a2a7b257999ce287eed545edc794a13133a027fc8ec7"
+        },
+        "rag_holdout_v1.jsonl": {
+          "record_count": "60",
+          "sha256": "560085f0ac55f7e5df28d08df988870d2a22ce6f34951c4e349ffb34c714148c"
+        },
+        "recovery_matrix_v1.jsonl": {
+          "record_count": "40",
+          "sha256": "98dc196cbafb5df2608b35d1dc0c94c2312b47bd1bd550a6d2ec9ff7d09ca4a7"
+        },
+        "security_holdout_v1.jsonl": {
+          "record_count": "60",
+          "sha256": "248ed4af64bb552c9ce2d6d6ad27a43a3e97045b01e599e3a5329677b50d9f87"
+        },
+        "workflow_holdout_v1.jsonl": {
+          "record_count": "120",
+          "sha256": "c3e389fa338ea8deb15869ba124823e627010019c623c4cf19adea98049eedc9"
+        }
+      },
+      "finished_at": "2026-10-08T05:16:30.319840Z",
+      "git": {
+        "git_branch": "main",
+        "git_head": "f71450ee156788a0aef7ac4565d6dba7cb6b590d",
+        "git_tree_sha": "5153faa81f45d4fedf7c47c95a183d34520a18e0",
+        "uncommitted_change_count": "12",
+        "uncommitted_diff_sha256": "218fba84df4da110ba6f61fa96593a11249f8ff15be84d96780ab735cb0d6153"
+      },
+      "isolated_stack": {
+        "mysql_container": "dianshang-bmk-v1-mysql-workflow-20261008",
+        "mysql_image": "mysql:8.4",
+        "mysql_port": "53281",
+        "qdrant_container": "dianshang-bmk-v1-qdrant-workflow-20261008",
+        "qdrant_image": "qdrant/qdrant:v1.12.5",
+        "qdrant_port": "53282",
+        "redis_container": "dianshang-bmk-v1-redis-workflow-20261008",
+        "redis_image": "redis:7.4-alpine",
+        "redis_port": "53283",
+        "status": "ISOLATED"
+      },
+      "knowledge_documents": {
+        "发货与物流规则.md": "document:0d4b87852c2e2fed907b4d9f74e24b41c0baf719c730f4fcef4ff06e27d5e287",
+        "商品损坏售后流程.md": "document:69dbacf9c4073759369c008882d86068792b56d3f419bf72a2bf1e25c1fd8578",
+        "商品资料-云感靠枕P9.md": "document:1fd5f8d68613704481ab9f331371b9fca1af46ce2878c7456b05da34bd7e24ca",
+        "商品资料-暖风杯H100.md": "document:021fac5682d716f961a9d4375d0da7747d990a211ff6d1119ec15136559ebb04",
+        "商品资料-轻氧洗面巾C20.md": "document:0673bf91fb735e29c62683f21b17ed912d3d73bcd3520713ffe0fcd1696a28b2",
+        "账号问题处理指南.md": "document:c6bcfa91a29cb2190f54b0026a69678a70d147c242e939b691a27e3d14868031",
+        "退换货政策.md": "document:710546634fa4b1dcee3ede89112ee959a58852e5cf14cfe34d676fba7ae73bfe",
+        "退款处理说明.md": "document:a6450be1a6ebe055eba5e06fa58642e0dd45ef9e2dcc28e2e291b7e866db82ee"
+      },
+      "profile": "workflow",
+      "profile_runs": [],
+      "python_version": "3.12.7",
+      "run": {
+        "exit_code": 0,
+        "profile": "workflow"
+      },
+      "runtime": {
+        "checkpoint_backend": "sqlite",
+        "durable_customer_interrupt_enabled": false,
+        "embedding_mock_enabled": true,
+        "embedding_model": "qwen3.7-text-embedding",
+        "embedding_provider": "mock",
+        "llm_max_completion_tokens": 512,
+        "llm_mock_enabled": true,
+        "llm_model": "deepseek-v4-flash",
+        "llm_provider": "mock",
+        "llm_request_timeout_seconds": 12,
+        "llm_temperature": 0.2
+      },
+      "started_at": "2026-10-08T05:12:58.998661Z"
+    }
+  },
+  "started_at": "2026-10-08T05:12:58.998661Z"
+}

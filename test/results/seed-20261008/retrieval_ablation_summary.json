@@ -1,0 +1,5 @@
+{
+  "reason": "LLM_MOCK_ENABLED=true; EMBEDDING_MOCK_ENABLED=true",
+  "rule": "real embedding provider unavailable; mock embeddings are never reported as real semantic retrieval",
+  "status": "NOT_RUN"
+}

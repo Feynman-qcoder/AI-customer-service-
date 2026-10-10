@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="resume_benchmark_v1" tests="15" failures="2">
+  <testcase name="profile:workflow" />
+  <testcase name="profile:security" />
+  <testcase name="profile:recovery" />
+  <testcase name="profile:rag-real"><failure message="gate or profile failed">NOT_RUN is a legitimate outcome; the claim sentence excludes it</failure></testcase>
+  <testcase name="profile:llm-real"><failure message="gate or profile failed">NOT_RUN is a legitimate outcome; the claim sentence excludes it</failure></testcase>
+  <testcase name="gate:TEST_SET_FROZEN_AND_DEDUPED" />
+  <testcase name="gate:MOCK_PROFILES_COMPLETE_NO_SKIP" />
+  <testcase name="gate:CROSS_USER_LEAKAGE_ZERO" />
+  <testcase name="gate:UNAUTHORIZED_BUSINESS_MUTATION_ZERO" />
+  <testcase name="gate:CONFIRMATION_APPROVAL_BYPASS_ZERO" />
+  <testcase name="gate:DUPLICATE_BUSINESS_EFFECTS_ZERO" />
+  <testcase name="gate:RAW_SECRET_EMITTED_ZERO" />
+  <testcase name="gate:EVIDENCE_MANIFEST_VALID" />
+  <testcase name="gate:TEMP_CONTAINERS_CLEANED" />
+  <testcase name="gate:WORKTREE_UNCHANGED" />
+</testsuite>
